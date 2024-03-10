@@ -1,0 +1,44 @@
+<section class="my-3">
+  <div class="row g-4">
+    <div class="col-md-2" *ngFor="let product of products">
+      <div class="product py-2 px-3">
+        <i
+          class="fa-regular fa-heart heart cursor-pointer"
+          (click)="AddFav(product._id)"
+          *ngIf="!wishListData.includes(product._id)"
+        ></i>
+        <i
+          *ngIf="wishListData.includes(product._id)"
+          class="fa fa-heart cursor-pointer heart"
+          style="color: #e60505"
+          (click)="RemoveFav(product._id)"
+        ></i>
+        <div class="cursor-pointer">
+          <div [routerLink]="['/details', product._id]">
+            <img
+              [src]="product.imageCover"
+              class="w-100"
+              [alt]="product.title"
+            />
+            <h3 class="h6" *ngIf="product.category">
+              {{ product.category.name }}
+            </h3>
+            <h4 class="h6 text-main">
+              {{ product.title | term : 2 }}
+            </h4>
+            <div class="d-flex justify-content-between my-2">
+              <span>{{ product.price | currency : "USD" }}</span>
+              <div>
+                <i class="fas fa-star rating-color"></i>
+                <span class="text-muted">{{ product.ratingsAverage }} </span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-main w-100" (click)="AddProduct(product._id)">
+            Add Product
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

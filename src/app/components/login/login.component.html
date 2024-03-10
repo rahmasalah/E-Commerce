@@ -1,0 +1,68 @@
+<section class="bg-main-light p-4 mx-auto w-75 my-4 rounded">
+  <h1>Login Now</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+    <div class="form-floating mb-3">
+      <input
+        #inputEmail
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <label for="email">Email</label>
+      <div
+        class="alert alert-danger py-0 pt-2 my-3 d-flex align-items-center"
+        *ngIf="
+          loginForm.get('email')?.errors &&
+          (loginForm.get('email')?.touched || inputEmail.value.length > 0)
+        "
+      >
+        <i class="fas fa-skull-crossbones fa-lg pe-3"></i>
+        <h5 *ngIf="loginForm.get('email')?.getError('required')">
+          email is Required
+        </h5>
+        <h5 *ngIf="loginForm.get('email')?.getError('email')">
+          email Invalid Format
+        </h5>
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="password"
+        class="form-control"
+        id="passowrd"
+        placeholder="passowrd"
+        formControlName="password"
+        #inputPassword
+      />
+      <label for="passowrd">Password</label>
+
+      <div
+        class="alert alert-danger py-0 pt-2 my-3 d-flex align-items-center"
+        *ngIf="
+          loginForm.get('password')?.errors &&
+          (loginForm.get('password')?.touched || inputPassword.value.length > 0)
+        "
+      >
+        <i class="fas fa-skull-crossbones fa-lg pe-3"></i>
+        <h5 *ngIf="loginForm.get('password')?.getError('required')">
+          password is Required
+        </h5>
+        <h5 *ngIf="loginForm.get('password')?.getError('pattern')">
+          must be at least 6 chars
+        </h5>
+      </div>
+    </div>
+
+    <p class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="d-flex align-items-center justify-content-between">
+      <button class="btn-main d-block" [disabled]="loginForm.invalid">
+        Login
+      </button>
+      <a routerLink="/forgetpassword" class="link-primary">Forget Password</a>
+    </div>
+  </form>
+</section>
