@@ -34,7 +34,7 @@ export class CartService {
 
   checkout(cartId: string, userData: object): Observable<any> {
     return this._HttpClient.post(
-      `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:4200&=`,
+      `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://rahmasalah.github.io/E-Commerce/login`,
       {
         shippingAddress: userData,
       }
