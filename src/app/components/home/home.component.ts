@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     private _ToastrService: ToastrService,
     private _WishlistService: WishlistService
   ) {}
-
+  numOfCartItems: number = 0;
   mainSliderOption: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -97,6 +97,7 @@ export class HomeComponent implements OnInit {
     this._CartService.AddToCart(id).subscribe({
       next: (res) => {
         this._ToastrService.success(res.message, 'Fresh Cart');
+        this._CartService.numOfCartItems.next(res.numOfCartItems);
       },
       error(err) {
         console.log(err);

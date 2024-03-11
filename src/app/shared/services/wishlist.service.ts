@@ -15,7 +15,6 @@ export class WishlistService {
     this.getWishlist().subscribe({
       next: (res) => {
         this.count.next(res.count);
-        console.log(res);
       },
     });
   }

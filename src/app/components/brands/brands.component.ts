@@ -15,7 +15,6 @@ export class BrandsComponent implements OnInit {
   ngOnInit(): void {
     this._HomeDataService.getBrands().subscribe({
       next: (res) => {
-        console.log(res.data);
         this.brandsData = res.data;
       },
       error(err) {

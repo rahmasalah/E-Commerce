@@ -20,7 +20,6 @@ export class ProductsComponent implements OnInit {
     this._HomeDataService.getAllProduct().subscribe({
       next: (res) => {
         this.productList = res.data;
-        console.log(res);
       },
       error(err) {
         console.log(err);

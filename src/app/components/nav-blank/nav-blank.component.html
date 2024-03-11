@@ -24,14 +24,7 @@
             >home</a
           >
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link text-capitalize"
-            routerLink="cart"
-            routerLinkActive="active-link"
-            >cart</a
-          >
-        </li>
+
         <li class="nav-item">
           <a
             class="nav-link text-capitalize"
@@ -75,6 +68,15 @@
               >
             </li>
           </ul>
+        </li>
+
+        <li class="nav-item position-relative">
+          <a class="nav-link text-capitalize" routerLink="/cart"
+            ><i class="fas fa-cart-shopping fa-xl text-main"></i
+          ></a>
+          <span class="position-absolute top-0 end-0 badge bg-main">
+            {{ numOfCartItems }}
+          </span>
         </li>
 
         <li class="nav-item position-relative">

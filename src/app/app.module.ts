@@ -35,6 +35,7 @@ import { LoadingInterceptor } from './loading.interceptor';
 import { BrandComponent } from './components/brand/brand.component';
 import { CategoryComponent } from './components/category/category.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CashcheckoutComponent } from './components/cashcheckout/cashcheckout.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     BrandComponent,
     CategoryComponent,
     WishlistComponent,
+    CashcheckoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassw
 import { CategoryComponent } from './components/category/category.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CashcheckoutComponent } from './components/cashcheckout/cashcheckout.component';
 
 const routes: Routes = [
   {
@@ -26,26 +27,39 @@ const routes: Routes = [
     component: BlankLayoutComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'details/:id', component: DetailsComponent },
-      { path: 'cart', component: CartComponent },
-      { path: 'checkout/:id', component: CheckoutComponent },
-      { path: 'category/:id', component: CategoryComponent },
-      { path: 'brand/:id', component: BrandComponent },
-      { path: 'products', component: ProductsComponent },
-      { path: 'allorders', component: AllordersComponent },
-      { path: 'wishlist', component: WishlistComponent },
-      { path: 'categories', component: CategoriesComponent },
-      { path: 'brands', component: BrandsComponent },
+      { path: 'home', component: HomeComponent, title: 'Home' },
+      { path: 'details/:id', component: DetailsComponent, title: 'Details' },
+      { path: 'cart', component: CartComponent, title: 'Cart' },
+      { path: 'checkout/:id', component: CheckoutComponent, title: 'Checkout' },
+      {
+        path: 'cashcheckout/:id',
+        component: CashcheckoutComponent,
+        title: 'Cash Checkout',
+      },
+      { path: 'category/:id', component: CategoryComponent, title: 'Category' },
+      { path: 'brand/:id', component: BrandComponent, title: 'Brand' },
+      { path: 'products', component: ProductsComponent, title: 'Products' },
+      { path: 'allorders', component: AllordersComponent, title: 'ALL Orders' },
+      { path: 'wishlist', component: WishlistComponent, title: 'Wishlist' },
+      {
+        path: 'categories',
+        component: CategoriesComponent,
+        title: 'Categories',
+      },
+      { path: 'brands', component: BrandsComponent, title: 'Brands' },
     ],
   },
   {
     path: '',
     component: AuthLayoutComponent,
     children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'forgetpassword', component: ForgetpasswordComponent },
+      { path: 'login', component: LoginComponent, title: 'Login' },
+      { path: 'register', component: RegisterComponent, title: 'Register' },
+      {
+        path: 'forgetpassword',
+        component: ForgetpasswordComponent,
+        title: 'Forget Password',
+      },
     ],
   },
 

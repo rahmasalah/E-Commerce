@@ -22,7 +22,6 @@ export class BrandComponent {
         let brandId: any = param.get('id');
         this._HomeDataService.getSpecific('brand', brandId).subscribe({
           next: (res) => {
-            console.log(res.data);
             this.brandData = res.data;
           },
         });

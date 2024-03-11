@@ -22,7 +22,6 @@ export class CategoryComponent implements OnInit {
         let categoryId: any = param.get('id');
         this._HomeDataService.getSpecific('category', categoryId).subscribe({
           next: (res) => {
-            console.log(res.data);
             this.categoryData = res.data;
           },
         });

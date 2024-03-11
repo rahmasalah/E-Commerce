@@ -15,7 +15,6 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this._HomeDataService.getCategories().subscribe({
       next: (res) => {
-        console.log(res.data);
         this.categoriesData = res.data;
       },
       error(err) {
