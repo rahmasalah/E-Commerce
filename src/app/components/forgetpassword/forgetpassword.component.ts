@@ -31,7 +31,10 @@ export class ForgetpasswordComponent {
   });
 
   newPassword: FormGroup = this._FormBuilder.group({
-    newPassword: ['', [Validators.required, Validators.pattern(/^\w{6,}$/)]],
+    newPassword: [
+      '',
+      [Validators.required, Validators.pattern(/^[A-Z]\w{6,}$/)],
+    ],
   });
 
   userEmail(): void {

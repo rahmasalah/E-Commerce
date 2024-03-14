@@ -51,7 +51,7 @@
           password is Required
         </h5>
         <h5 *ngIf="loginForm.get('password')?.getError('pattern')">
-          must be at least 6 chars
+          must start with capital letter and at least 6 chars
         </h5>
       </div>
     </div>
